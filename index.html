@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoPermisos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar">
+        <span class="brand">EcoPermisos</span>
+        <div class="topbar-links">
+          <a href="#publica">Sección Pública</a>
+          <a href="#tramite">Sección de Trámite</a>
+        </div>
+      </nav>
+
+      <section class="hero-content">
+        <div>
+          <p class="eyebrow">Gestión ambiental más clara y digital</p>
+          <h1>Plataforma web para permisos ambientales en Panamá</h1>
+          <p class="hero-copy">
+            Consulta expedientes, revisa estados, carga documentos y da seguimiento
+            al trámite sin reemplazar la evaluación técnica de MiAmbiente.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#publica">Consultar expedientes</a>
+            <a class="button secondary" href="#tramite">Iniciar trámite</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <h2>Objetivo general</h2>
+          <p>
+            Digitalizar y mejorar la gestión de solicitudes de permisos
+            ambientales, reduciendo tiempos, errores y falta de transparencia.
+          </p>
+          <ul>
+            <li>Expedientes digitales con documentos adjuntos</li>
+            <li>Seguimiento público del estado del trámite</li>
+            <li>Observaciones, correcciones e historial</li>
+          </ul>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Áreas principales</p>
+          <h2>Accesos rápidos</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="access-card">
+            <h3>Sección Pública</h3>
+            <p>
+              Dirigida a ciudadanos, comunidades, empresas y personas interesadas.
+            </p>
+            <ul>
+              <li>Consulta de permisos y expedientes</li>
+              <li>Estados, fechas y actualizaciones</li>
+              <li>Documentos públicos y línea de tiempo</li>
+            </ul>
+            <a class="button primary" href="#publica">Entrar</a>
+          </article>
+
+          <article class="access-card">
+            <h3>Sección de Trámite</h3>
+            <p>
+              Dirigida a solicitantes, consultores y evaluadores autorizados.
+            </p>
+            <ul>
+              <li>Registro e inicio de sesión</li>
+              <li>Solicitud de permiso y carga documental</li>
+              <li>Requisitos, observaciones y seguimiento</li>
+            </ul>
+            <a class="button secondary" href="#tramite">Entrar</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section surface" id="publica">
+        <div class="section-heading">
+          <p class="eyebrow">Consulta ciudadana</p>
+          <h2>Buscador público de expedientes</h2>
+        </div>
+
+        <div class="search-layout">
+          <form class="search-panel" id="search-form">
+            <label>
+              Número de expediente
+              <input type="text" id="filter-expediente" placeholder="Ej. EA-2026-014" />
+            </label>
+            <label>
+              Nombre del proyecto
+              <input type="text" id="filter-proyecto" placeholder="Parque Solar..." />
+            </label>
+            <label>
+              Provincia
+              <input type="text" id="filter-provincia" placeholder="Panamá Oeste" />
+            </label>
+            <label>
+              Empresa
+              <input type="text" id="filter-empresa" placeholder="Eco Energía, S.A." />
+            </label>
+            <button class="button primary" type="submit">Buscar expediente</button>
+          </form>
+
+          <div class="results-panel">
+            <div class="results-header">
+              <h3>Resultados</h3>
+              <span id="results-count">0 expedientes</span>
+            </div>
+            <div id="results-list" class="results-list" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <article class="detail-card" id="detail-card" aria-live="polite">
+          <div class="detail-header">
+            <div>
+              <p class="eyebrow">Detalle del expediente</p>
+              <h3 id="detail-title">Seleccione un expediente</h3>
+            </div>
+            <span class="status-badge" id="detail-status">Sin selección</span>
+          </div>
+
+          <div class="detail-meta" id="detail-meta">
+            Use el buscador para revisar fechas, documentos, observaciones y la
+            línea de tiempo del proceso.
+          </div>
+
+          <div class="detail-grid">
+            <section>
+              <h4>Documentos públicos</h4>
+              <ul id="detail-documents" class="plain-list"></ul>
+            </section>
+
+            <section>
+              <h4>Observaciones generales</h4>
+              <ul id="detail-observations" class="plain-list"></ul>
+            </section>
+          </div>
+
+          <section>
+            <h4>Línea de tiempo</h4>
+            <ol id="detail-timeline" class="timeline"></ol>
+          </section>
+        </article>
+      </section>
+
+      <section class="section" id="tramite">
+        <div class="section-heading">
+          <p class="eyebrow">Seguimiento del solicitante</p>
+          <h2>Sección de Trámite</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="auth-card">
+            <h3>Registro e inicio de sesión</h3>
+            <p>Cree su cuenta o continúe con un expediente en progreso.</p>
+            <div class="hero-actions">
+              <button class="button primary" type="button">Registrarse</button>
+              <button class="button secondary" type="button">Iniciar sesión</button>
+            </div>
+          </article>
+
+          <article class="dashboard-card">
+            <h3>Dashboard del solicitante</h3>
+            <div class="summary-grid">
+              <div>
+                <strong>1</strong>
+                <span>Expediente en revisión</span>
+              </div>
+              <div>
+                <strong>2</strong>
+                <span>Requisitos pendientes</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>Observación nueva</span>
+              </div>
+            </div>
+            <div class="dashboard-columns">
+              <section>
+                <h4>Requisitos pendientes</h4>
+                <ul class="plain-list checklist">
+                  <li>Estudio de impacto ambiental firmado</li>
+                  <li>Plano de ubicación actualizado</li>
+                </ul>
+              </section>
+              <section>
+                <h4>Observaciones recibidas</h4>
+                <ul class="plain-list">
+                  <li>Corregir la descripción del área de influencia.</li>
+                  <li>Reemplazar el plano con versión legible.</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </div>
+
+        <form class="request-form" id="request-form" novalidate>
+          <div class="form-heading">
+            <h3>Nueva solicitud de permiso ambiental</h3>
+            <p>
+              Registre el proyecto, adjunte documentos y valide la información
+              antes de enviarla.
+            </p>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Nombre del proyecto
+              <input type="text" name="projectName" required />
+              <span class="error-message"></span>
+            </label>
+
+            <label>
+              Empresa solicitante
+              <input type="text" name="company" required />
+              <span class="error-message"></span>
+            </label>
+
+            <label>
+              Provincia
+              <select name="province" required>
+                <option value="">Seleccione una provincia</option>
+                <option>Panamá</option>
+                <option>Panamá Oeste</option>
+                <option>Colón</option>
+                <option>Coclé</option>
+                <option>Chiriquí</option>
+              </select>
+              <span class="error-message"></span>
+            </label>
+
+            <label>
+              Tipo de permiso
+              <select name="permitType" required>
+                <option value="">Seleccione un tipo</option>
+                <option>Estudio de impacto ambiental</option>
+                <option>Permiso de operación</option>
+                <option>Renovación de expediente</option>
+              </select>
+              <span class="error-message"></span>
+            </label>
+          </div>
+
+          <label>
+            Descripción del proyecto
+            <textarea name="description" rows="4" required></textarea>
+            <span class="error-message"></span>
+          </label>
+
+          <div class="upload-grid">
+            <label>
+              Estudio o documento principal
+              <input type="file" name="mainDocument" required />
+              <span class="error-message"></span>
+            </label>
+
+            <label>
+              Plano o anexo técnico
+              <input type="file" name="attachmentDocument" required />
+              <span class="error-message"></span>
+            </label>
+          </div>
+
+          <label class="checkbox-field">
+            <input type="checkbox" name="confirmation" required />
+            Confirmo que la información está completa y lista para revisión.
+          </label>
+          <span class="error-message checkbox-error"></span>
+
+          <div class="hero-actions">
+            <button class="button primary" type="submit">Enviar solicitud</button>
+            <p id="form-feedback" class="form-feedback" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
